@@ -32,7 +32,7 @@ class TasksController < ApplicationController
     task.destroy
     redirect_to tasks_url, notice: "タスク「#{task.name}」を削除しました。"
   end
-  
+  a
   private
 
   def task_params
