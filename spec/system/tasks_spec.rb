@@ -4,7 +4,7 @@ describe 'タスク管理機能', type: :system do
     describe '一覧表示機能' do
         before do
             user_a = FactoryBot.create(:user, name: 'ユーザーA', email: 'a@example.com')
-            # 作成者がユーザーAであるタスクを作成しておく
+            FactoryBot.create(:task, name: '最初のタスク', user: user_a)
         end
 
         context 'ユーザーAがログインしている時' do
