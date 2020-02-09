@@ -41,7 +41,13 @@ class TasksController < ApplicationController
     @task_logger ||= Logger.new('log/task.log','daily')
   end
 
-  task_logger.debug 'taskのログを出力'
+  def confirm_new
+    @task = current_user.tasks.new(task_params)
+    render :new unless @task.valid?
+  end
+
+#  task_logger.debug 'taskのログを出力'
+
 
   private
 
